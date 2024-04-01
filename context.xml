@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multi Field"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[com.grp.multiField]"
+    helpPath="https://www.adobe.com/go/aem_cmp_form_button_v2"
+    trackingFeature="core-components:form-button:v2">
+	<content
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<properties
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Properties"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructur           ed">
+							<columns
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column
+										jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<multifield
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+												composite="{Boolean}true"
+												fieldLabel="Multi Field Items">
+												<field
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/coral/foundation/container"
+													name="./actionblock">
+													<items jcr:primaryType="nt:unstructured">
+														<well
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/coral/foundation/well">
+															<items jcr:primaryType="nt:unstructured">
+																<querypassthrough
+																	granite:class="cq-dialog-checkbox-showhide"
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+																	name="./checkbox"
+																	text="Check box"
+																	uncheckedValue="{Boolean}false"
+																	value="{Boolean}true">
+																	<granite:data
+																		jcr:primaryType="nt:unstructured"
+																		cq-dialog-checkbox-showhide-target=".togglefield"/>
+																</querypassthrough>
+																<querypassthroughfields
+																	granite:class="togglefield"
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/container">
+																	<items jcr:primaryType="nt:unstructured">
+																		<textField
+																			jcr:primaryType="nt:unstructured"
+																			sling:resourceType="granite/ui/components/foundation/form/textfield"
+																			fieldLabel="Name"
+																			name="./name"/>
+																	</items>
+																</querypassthroughfields>
+															</items>
+														</well>
+													</items>
+												</field>
+											</multifield>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</properties>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>
